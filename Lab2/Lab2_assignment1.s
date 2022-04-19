@@ -7,12 +7,12 @@ hamming_distance:
 loop:
         cmp r0, #0
         beq end
-        lsr r0, r0, #1
         and r2, r0, #1
         cmp r2, #0
         beq skip
         add r3, r3, #1
-skip:   b   loop
+skip:   lsr r0, r0, #1
+        b   loop
 
 end:    mov r0, r3
         bx  lr

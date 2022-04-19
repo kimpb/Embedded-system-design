@@ -1,10 +1,7 @@
 
-int recursive_sum(){
-    int i, a = 1, b = 1, c;
-    for(i=2;i<=15;i++){
-        c = a + b;
-        a = b;
-        b = c;
+int recursive_sum(int num){
+    if (num <= 1){
+        return 1;
     }
-    return c;
+    return recursive_sum(num-1) + recursive_sum(num-2);
 }
