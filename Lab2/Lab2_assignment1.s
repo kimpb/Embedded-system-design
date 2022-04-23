@@ -11,8 +11,8 @@ loop:
         cmp r2, #0
         beq skip
         add r3, r3, #1
-skip:   lsr r0, r0, #1
-        b   loop
+        lsr r0, r0, #1
+skip:   b   loop
 
 end:    mov r0, r3
         bx  lr
