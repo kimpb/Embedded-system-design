@@ -28,7 +28,6 @@ int main(void){
     hex54 = (volatile int *) (lw_virtual + HEX5_HEX4_BASE);
     key = (volatile int *) (lw_virtual + KEY_BASE);
 
-
     *hex30 = 0;
     *hex54 = 0;
     int pressed1 = 0, pressed2 = 0;
@@ -83,34 +82,6 @@ int main(void){
         }
         *hex30 = SEG7_OPERATOR(operator%4) << 24 |  SEG7_CODE(operand2%10) << 16 | (0b1001000) << 8 | SEG7_CODE(result%10);
         *hex54 = SEG7_CODE(operand1%10);
-        // switch(status%4){
-        //     case 0:
-        //     *hex30 = SEG7_CODE(operand1%10);
-        //     break;
-        //     case 1:
-        //     *hex30 = SEG7_CODE(operator%4);
-        //     break;
-        //     case 2:
-        //     *hex30 = SEG7_CODE(operand2%10);
-        //     break;
-        //     case 3:
-        //     switch(operator%4){
-        //         case 0:
-        //         result = (operand1%10) + (operand2%10);
-        //         break;
-        //         case 1:
-        //         result = (operand1%10) - (operand2%10);
-        //         break;
-        //         case 2:
-        //         result = (operand1%10) * (operand2%10);
-        //         break;
-        //         case 3:
-        //         result = (operand1%10) / (operand2%10);
-        //         break;
-        //     };
-        //     *hex30 = SEG7_CODE(result);
-        //     break;
-        // }
         usleep(1000);
 
     }

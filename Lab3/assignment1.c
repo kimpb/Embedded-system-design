@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/mman.h>
-#include"address_map_arm.h"
+#include "address_map_arm.h"
 
 int SEG7_CODE(int i){
     char BIT_CODE[10] = {0b00111111, 0b00000110, 0b01011011, 0b01001111, 0b01100110, 0b01101101, 0b01111101, 0b00000111, 0b01111111, 0b01100111};
@@ -16,8 +16,6 @@ int main(void){
     volatile int *hex30;
     volatile int *hex54;
     int SEGMENT7;
-    int hex[5] = {0};
-
 
     int student_id[20] = {2, 0, 1, 5, 1, 2, 4, 2, 1, 3, 2, 0, 1, 7, 1, 2, 4, 1, 7, 8};
 
@@ -39,7 +37,7 @@ int main(void){
         *hex30 = (*hex30) | SEGMENT7;
 
 
-        usleep(1000000);
+        usleep(500000);
 
     }
 
